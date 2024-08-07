@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const corsOptions = {
-    origin: 'https://teal-nougat-88636c.netlify.app',
+    origin: 'https://spontaneous-starlight-92eeba.netlify.app',
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true,
 };
