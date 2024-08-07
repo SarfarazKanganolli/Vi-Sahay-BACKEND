@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const corsOptions = {
-    origin: 'http://localhost:5173',
+    origin: 'https://melodious-kitten-712f69.netlify.app',
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true,
 };
@@ -28,9 +28,15 @@ app.use('/api', authRoute);
 app.use('/api/form', contactRoute);
 app.use('/api/volunteer_form', volunteerRoute);
 
-app.get('/api/stripe-url', (req,res) => {
-    const stripeUrl = stripe;
-    res.json({ url: stripeUrl });
+app.get('/api/stripe-url', (req, res) => {
+    try {
+        const stripeUrl = stripe;
+        res.json({ url: stripeUrl });
+    } catch (error) {
+        console.error('Error fetching Stripe URL:', error);
+        res.status(500).send('Error fetching Stripe URL');
+    }
+
 });
 
 
