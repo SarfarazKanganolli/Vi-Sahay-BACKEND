@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const corsOptions = {
-    origin: 'https://spontaneous-starlight-92eeba.netlify.app',
+    origin: 'https://visahay.netlify.app',
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true,
 };
