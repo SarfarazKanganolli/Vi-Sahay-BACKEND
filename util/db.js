@@ -2,7 +2,7 @@ const mongosse = require('mongoose');
 
 require('dotenv').config();
 
-// const URI = "mongodb://127.0.0.1:27017/mern_admin"
+
 
 const URI  = process.env.MONGODB_URI
 
@@ -18,6 +18,7 @@ try {
         process.exit(0);
     }
 }
-    
+
+// Databases connection
 
 module.exports = connectDb;
