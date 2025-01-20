@@ -16,13 +16,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(bodyParser.json());
 
+// const corsOptions = {
+//     origin: 'https://visahay.netlify.app',
+//     // origin: 'http://localhost:5173',
+//     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
+//     credentials: true,
+// };
 const corsOptions = {
-    origin: 'https://visahay.netlify.app',
+    origin: 'https://visahay.netlify.app', // Production frontend URL
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
-    credentials: true,
+    credentials: true, // Allow cookies and authorization headers
 };
 
 app.use(cors(corsOptions));
+
 
 app.use('/api', authRoute);
 app.use('/api/form', contactRoute);
